@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blue1">#617DED</color>
+    <color name="blue2">#2AC1B0</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">PadelAPP</string>
+    <string name="btn_connect">Connect</string>
+    <string name="connect">Introduce the Robot IP address to connect</string>
+    <string name="ip_address">IP address</string>
+    <string name="port">Port: 8080</string>
+    <string name="start">start</string>
+    <string name="welcome_to_padel_app"> Welcome to Padel App</string>
+    <style name="Base.Theme.PadelAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.PadelAPP" parent="Base.Theme.PadelAPP"/>
+</resources>

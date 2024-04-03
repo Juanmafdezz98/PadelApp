@@ -1,0 +1,6 @@
+com.example.padelapp.test.app-core-1.5.0-0 C:\Users\juanm\.gradle\caches\transforms-3\18319edf6936886e4f4a47a1bfe3b140\transformed\core-1.5.0\res
+com.example.padelapp.test.app-annotation-experimental-1.3.0-1 C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\res
+com.example.padelapp.test.app-androidTest-2 C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\build\generated\res\resValues\androidTest\debug
+com.example.padelapp.test.app-mergeDebugAndroidTestResources-3 C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.padelapp.test.app-mergeDebugAndroidTestResources-4 C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.padelapp.test.app-debugAndroidTest-5 C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

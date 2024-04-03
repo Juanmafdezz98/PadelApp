@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color blue1
+color blue2
+color white
+drawable edit_text
+drawable fondo
+drawable fondo2
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ip_address
+drawable login
+drawable login_padel
+drawable va_connection
+drawable wall
+id btStart
+id ip_add
+id main
+layout activity_login
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string btn_connect
+string connect
+string ip_address
+string port
+string start
+string welcome_to_padel_app
+style Base.Theme.PadelAPP
+style Theme.PadelAPP
+xml backup_rules
+xml data_extraction_rules
