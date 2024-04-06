@@ -3092,6 +3092,7 @@ int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
 int id CTRL 0x7f080003
 int id FUNCTION 0x7f080004
+int id Linear 0x7f0801f6
 int id META 0x7f080005
 int id NO_DEBUG 0x7f080006
 int id SHIFT 0x7f080007
@@ -3185,11 +3186,14 @@ int id bounce 0x7f08005e
 int id bounceBoth 0x7f08005f
 int id bounceEnd 0x7f080060
 int id bounceStart 0x7f080061
+int id btSend 0x7f0801f7
 int id btStart 0x7f080062
+int id btn_connect 0x7f0801f3
 int id buttonPanel 0x7f080063
 int id cache_measures 0x7f080064
 int id callMeasure 0x7f080065
 int id cancel_button 0x7f080066
+int id cardView 0x7f0801f4
 int id carryVelocity 0x7f080067
 int id center 0x7f080068
 int id centerCrop 0x7f080069
@@ -3563,6 +3567,7 @@ int id transition_position 0x7f0801d8
 int id transition_scene_layoutid_cache 0x7f0801d9
 int id transition_transform 0x7f0801da
 int id triangle 0x7f0801db
+int id tv_connect 0x7f0801f5
 int id unchecked 0x7f0801dc
 int id uniform 0x7f0801dd
 int id unlabeled 0x7f0801de
@@ -3948,10 +3953,12 @@ int string path_password_eye_mask_strike_through 0x7f0f00a0
 int string path_password_eye_mask_visible 0x7f0f00a1
 int string path_password_strike_through 0x7f0f00a2
 int string port 0x7f0f00a3
+int string received 0x7f0f00ad
 int string search_menu_title 0x7f0f00a4
 int string searchbar_scrolling_view_behavior 0x7f0f00a5
 int string searchview_clear_text_content_description 0x7f0f00a6
 int string searchview_navigation_content_description 0x7f0f00a7
+int string send_message 0x7f0f00ae
 int string side_sheet_accessibility_pane_title 0x7f0f00a8
 int string side_sheet_behavior 0x7f0f00a9
 int string start 0x7f0f00aa

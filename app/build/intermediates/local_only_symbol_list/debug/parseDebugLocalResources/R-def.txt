@@ -14,9 +14,14 @@ drawable login
 drawable login_padel
 drawable va_connection
 drawable wall
+id Linear
+id btSend
 id btStart
+id btn_connect
+id cardView
 id ip_add
 id main
+id tv_connect
 layout activity_login
 layout activity_main
 mipmap ic_launcher
@@ -26,6 +31,8 @@ string btn_connect
 string connect
 string ip_address
 string port
+string received
+string send_message
 string start
 string welcome_to_padel_app
 style Base.Theme.PadelAPP

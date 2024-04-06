@@ -1,10 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-29:12
-MERGED from [androidx.databinding:viewbinding:8.3.0] C:\Users\juanm\.gradle\caches\transforms-3\d0cc2ba07cc1a51ca5e66f2701b86679\transformed\viewbinding-8.3.0\AndroidManifest.xml:2:1-7:12
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\juanm\.gradle\caches\transforms-3\ee0063f0d4c8967c634e750c7bcb2e46\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\juanm\.gradle\caches\transforms-3\ddf324b6a45754fc446fc6eab33ec636\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\juanm\.gradle\caches\transforms-3\e0b36974138b4f555dc681ab61bd7cef\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -34,6 +33,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\juanm\.g
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\073c1fdccd24ccb775904b3e7562c407\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\0069e29226036c7e53d289dd6b7cb333\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\21de947a585066699bd15b69edf2786d\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\a25d4778bdd238569299217859e2c611\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\44f2e44cbbbd3053723086f6aa1a7560\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\0a1c478fb24ed85ca546b541adb89d8b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
@@ -45,7 +45,6 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\juanm\.gradle\cache
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\a817e83e39df36bfbaf9b5fb2cd56240\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\c17d96c23a9a75bfc2cbbd51435e2b8c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\6962bae23e2af9a19e63c59df9040255\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 	package
 		INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -56,9 +55,13 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.
 		INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:5:5-27:19
-INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:5:5-27:19
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:7:5-29:19
+INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:7:5-29:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\juanm\.gradle\caches\transforms-3\ee0063f0d4c8967c634e750c7bcb2e46\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\juanm\.gradle\caches\transforms-3\ee0063f0d4c8967c634e750c7bcb2e46\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\juanm\.gradle\caches\transforms-3\ddf324b6a45754fc446fc6eab33ec636\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -80,51 +83,49 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ju
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\juanm\.gradle\caches\transforms-3\c601c3bf24e07cf39c6e7c3bd5b5000d\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:12:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:8:9-54
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:13:9-54
 	tools:targetApi
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:14:9-29
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:13:9-46
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:15:9-46
 	android:dataExtractionRules
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:7:9-65
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:9:9-65
 activity#com.example.padelapp.LoginActivity
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:15:9-17:40
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:17:9-19:40
 	android:exported
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:17:13-37
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:16:13-42
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:18:13-42
 activity#com.example.padelapp.MainActivity
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:18:9-26:20
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:20:9-28:20
 	android:exported
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:20:13-36
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:19:13-41
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:21:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml:26:27-74
 uses-sdk
 INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml
-MERGED from [androidx.databinding:viewbinding:8.3.0] C:\Users\juanm\.gradle\caches\transforms-3\d0cc2ba07cc1a51ca5e66f2701b86679\transformed\viewbinding-8.3.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.databinding:viewbinding:8.3.0] C:\Users\juanm\.gradle\caches\transforms-3\d0cc2ba07cc1a51ca5e66f2701b86679\transformed\viewbinding-8.3.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\juanm\.gradle\caches\transforms-3\ee0063f0d4c8967c634e750c7bcb2e46\transformed\material-1.11.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\juanm\.gradle\caches\transforms-3\ee0063f0d4c8967c634e750c7bcb2e46\transformed\material-1.11.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\juanm\.gradle\caches\transforms-3\ddf324b6a45754fc446fc6eab33ec636\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
@@ -183,6 +184,8 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\juanm\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\0069e29226036c7e53d289dd6b7cb333\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\21de947a585066699bd15b69edf2786d\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\juanm\.gradle\caches\transforms-3\21de947a585066699bd15b69edf2786d\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\a25d4778bdd238569299217859e2c611\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\a25d4778bdd238569299217859e2c611\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\44f2e44cbbbd3053723086f6aa1a7560\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
@@ -205,8 +208,6 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\c17d96c23a9a75bfc2cbbd51435e2b8c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\6962bae23e2af9a19e63c59df9040255\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\juanm\.gradle\caches\transforms-3\6962bae23e2af9a19e63c59df9040255\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\juanm\.gradle\caches\transforms-3\35637c27b9d69e2cbe5ea0e08fed6d92\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		INJECTED from C:\Users\juanm\AndroidStudioProjects\PadelAPP\app\src\main\AndroidManifest.xml
 	android:minSdkVersion

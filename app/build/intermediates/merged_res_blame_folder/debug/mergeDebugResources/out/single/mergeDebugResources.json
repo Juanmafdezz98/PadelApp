@@ -24,12 +24,12 @@
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-anydpi\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

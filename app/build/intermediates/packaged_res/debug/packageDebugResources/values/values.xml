@@ -9,6 +9,8 @@
     <string name="connect">Introduce the Robot IP address to connect</string>
     <string name="ip_address">IP address</string>
     <string name="port">Port: 8080</string>
+    <string name="received">Message correctly received</string>
+    <string name="send_message">Send Message</string>
     <string name="start">start</string>
     <string name="welcome_to_padel_app"> Welcome to Padel App</string>
     <style name="Base.Theme.PadelAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">

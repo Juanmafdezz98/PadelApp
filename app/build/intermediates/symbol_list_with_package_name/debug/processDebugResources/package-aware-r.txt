@@ -3093,6 +3093,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id Linear
 id META
 id NO_DEBUG
 id SHIFT
@@ -3186,11 +3187,14 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btSend
 id btStart
+id btn_connect
 id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id centerCrop
@@ -3564,6 +3568,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_connect
 id unchecked
 id uniform
 id unlabeled
@@ -3949,10 +3954,12 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string port
+string received
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string send_message
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string start
