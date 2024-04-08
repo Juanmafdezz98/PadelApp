@@ -7,6 +7,8 @@ color white
 drawable edit_text
 drawable fondo
 drawable fondo2
+drawable forward_arrow
+drawable forward_button
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ip_address
@@ -17,6 +19,7 @@ drawable wall
 id Linear
 id btSend
 id btStart
+id btnForward
 id btn_connect
 id cardView
 id ip_add
@@ -24,11 +27,13 @@ id main
 id tv_connect
 layout activity_login
 layout activity_main
+layout activity_principal
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string btn_connect
 string connect
+string cont
 string ip_address
 string port
 string received

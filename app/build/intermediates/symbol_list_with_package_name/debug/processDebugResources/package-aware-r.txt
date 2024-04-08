@@ -2988,6 +2988,8 @@ drawable design_snackbar_background
 drawable edit_text
 drawable fondo
 drawable fondo2
+drawable forward_arrow
+drawable forward_button
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3189,6 +3191,7 @@ id bounceEnd
 id bounceStart
 id btSend
 id btStart
+id btnForward
 id btn_connect
 id buttonPanel
 id cache_measures
@@ -3708,6 +3711,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_principal
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3839,6 +3843,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
 string connect
+string cont
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description

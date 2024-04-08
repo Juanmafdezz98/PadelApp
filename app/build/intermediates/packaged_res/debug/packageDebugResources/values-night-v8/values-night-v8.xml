@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="cont">Continue</string>
     <style name="Base.Theme.PadelAPP" parent="Theme.Material3.DayNight.NoActionBar">
         
         

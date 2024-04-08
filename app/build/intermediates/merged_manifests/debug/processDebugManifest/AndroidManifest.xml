@@ -30,6 +30,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.PadelAPP" >
         <activity
+            android:name="com.example.padelapp.PrincipalActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.padelapp.LoginActivity"
             android:exported="false" />
         <activity

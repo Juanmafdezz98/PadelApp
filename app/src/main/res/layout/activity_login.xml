@@ -127,4 +127,32 @@
         app:cornerRadius ="10dp">
     </Button>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btSend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Linear"
+        android:src="@drawable/forward_arrow"
+        app:tint="#3B19D1"
+        app:maxImageSize="30dp"
+        app:fabCustomSize="45dp"
+        tools:ignore="ContentDescription">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/cont"
+        android:textColor="@color/white">
+    </TextView>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
