@@ -1,8 +1,11 @@
 R_DEF: Internal format may change without notice
 local
+color background_app
+color background_component
 color black
 color blue1
 color blue2
+color ic_launcher_background
 color white
 drawable edit_text
 drawable fondo
@@ -22,18 +25,22 @@ id btStart
 id btnForward
 id btn_connect
 id cardView
+id cardView2
 id ip_add
 id main
 id tv_connect
+id tv_info
 layout activity_login
 layout activity_main
 layout activity_principal
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 string btn_connect
 string connect
 string cont
+string fast_modes
 string ip_address
 string port
 string received

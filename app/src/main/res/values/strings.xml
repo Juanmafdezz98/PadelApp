@@ -9,4 +9,5 @@
     <string name="send_message">Send Message</string>
     <string name="received">Message correctly received</string>
     <string name="cont">Continue</string>
+    <string name="fast_modes">Fast Modes</string>
 </resources>

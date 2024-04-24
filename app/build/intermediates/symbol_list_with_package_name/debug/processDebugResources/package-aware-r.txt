@@ -1350,6 +1350,8 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color background_app
+color background_component
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1419,6 +1421,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3198,6 +3201,7 @@ id cache_measures
 id callMeasure
 id cancel_button
 id cardView
+id cardView2
 id carryVelocity
 id center
 id centerCrop
@@ -3572,6 +3576,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tv_connect
+id tv_info
 id unchecked
 id uniform
 id unlabeled
@@ -3792,6 +3797,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
@@ -3849,6 +3855,7 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fast_modes
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string ip_address

@@ -17,14 +17,17 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
 
 class LoginActivity : AppCompatActivity() {
 
+    //Variables
     private lateinit var ip: InetAddress
     private lateinit var etIP: EditText
     private lateinit var btConnect: Button
@@ -51,39 +54,60 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private suspend fun connect(address: InetAddress) {
-        withContext(IO) {
-            try {
-                socket = Socket(address, port)
-            } catch (e: Exception) {
-                Log.i("Socket", "Exception")
-                /*withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        context,
-                        "Unable to establish connection with the provided IP address. Please try again.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }*/
+        val timeout = 3000L // 3 seconds ---> Doesn't work
+        try {
+            val result = withTimeoutOrNull(timeout) {
+                withContext(IO) {
+                    socket = Socket(address, port)
+                }
+            }
+            if (result == null) {
                 context.runOnUiThread {
                     Toast.makeText(
                         context,
-                        "Unable to establish connection with the provided IP address. Please try again.",
+                        "Server is not available. Please try again later.",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                e.printStackTrace()
             }
+        } catch (e: TimeoutCancellationException) {
+            context.runOnUiThread {
+                Toast.makeText(
+                    context,
+                    "Connection timeout. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } catch (e: Exception) {
+            context.runOnUiThread {
+                Toast.makeText(
+                    context,
+                    "Introduce an IP address to connect. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            e.printStackTrace()
         }
-
     }
 
     @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
         btConnect.setOnClickListener {
-            ip = InetAddress.getByName(etIP.text.toString())
-            CoroutineScope(IO).launch {
-                connect(ip)
+            try {
+                ip = InetAddress.getByName(etIP.text.toString())
+                CoroutineScope(IO).launch {
+                    connect(ip)
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+                context.runOnUiThread {
+                    Toast.makeText(
+                        context,
+                        "IP Address no valid. Please, enter a valid IP address and try again.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
-
         }
 
 
@@ -98,13 +122,15 @@ class LoginActivity : AppCompatActivity() {
                         tvConnect.setText(R.string.received)
                     }
                 }
-            }
-            else noConnected()
+            } else noConnected()
         }
 
         fabNext.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
-            if (::socket.isInitialized) startActivity(intent)
+            if (::socket.isInitialized) {
+                intent.putExtra("IP", ip.toString())
+                startActivity(intent)
+            }
             noConnected()
         }
     }

@@ -4,4 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue1">#617DED</color>
     <color name="blue2">#2AC1B0</color>
+
+
+    <color name="background_app">#1B1733</color>
+    <color name="background_component">#8C90F1</color>
+
 </resources>
