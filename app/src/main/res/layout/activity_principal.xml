@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/tv_info"
         android:layout_width="0dp"
-        
+
         android:layout_height="wrap_content"
         tools:text="ip: xxx.xxx.x.xxx      Port: 8080"
         android:textAllCaps="true"
