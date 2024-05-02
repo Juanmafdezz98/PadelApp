@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PadelAPP"
         tools:targetApi="31">
         <activity
+            android:name=".ShotsInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PrincipalActivity"
             android:exported="false" />
         <activity

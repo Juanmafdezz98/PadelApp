@@ -53,43 +53,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun connect(address: InetAddress) {
-        val timeout = 3000L // 3 seconds ---> Doesn't work
-        try {
-            val result = withTimeoutOrNull(timeout) {
-                withContext(IO) {
-                    socket = Socket(address, port)
-                }
-            }
-            if (result == null) {
-                context.runOnUiThread {
-                    Toast.makeText(
-                        context,
-                        "Server is not available. Please try again later.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        } catch (e: TimeoutCancellationException) {
-            context.runOnUiThread {
-                Toast.makeText(
-                    context,
-                    "Connection timeout. Please try again.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        } catch (e: Exception) {
-            context.runOnUiThread {
-                Toast.makeText(
-                    context,
-                    "Introduce an IP address to connect. Please try again.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            e.printStackTrace()
-        }
-    }
-
     @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
         btConnect.setOnClickListener {
@@ -109,7 +72,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
 
         btSend.setOnClickListener {
             if (::socket.isInitialized) {
@@ -149,6 +111,43 @@ class LoginActivity : AppCompatActivity() {
             "Connection to the server has not been established. Please connect first",
             Toast.LENGTH_SHORT
         ).show()
+    }
+
+    private suspend fun connect(address: InetAddress) {
+        val timeout = 3000L // 3 seconds ---> Doesn't work
+        try {
+            val result = withTimeoutOrNull(timeout) {
+                withContext(IO) {
+                    socket = Socket(address, port)
+                }
+            }
+            if (result == null) {
+                context.runOnUiThread {
+                    Toast.makeText(
+                        context,
+                        "Server is not available. Please try again later.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: TimeoutCancellationException) {
+            context.runOnUiThread {
+                Toast.makeText(
+                    context,
+                    "Connection timeout. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } catch (e: Exception) {
+            context.runOnUiThread {
+                Toast.makeText(
+                    context,
+                    "Introduce an IP address to connect. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            e.printStackTrace()
+        }
     }
 
 }
