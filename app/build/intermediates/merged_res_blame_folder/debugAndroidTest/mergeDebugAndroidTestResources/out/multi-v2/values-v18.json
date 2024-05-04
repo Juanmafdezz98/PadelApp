@@ -4,7 +4,7 @@
             "outputFile": "com.example.padelapp.test.app-mergeDebugAndroidTestResources-3:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\juanm\\.gradle\\caches\\transforms-3\\18319edf6936886e4f4a47a1bfe3b140\\transformed\\core-1.5.0\\res\\values-v18\\values.xml",
+                    "source": "C:\\Users\\juanm\\.gradle\\caches\\transforms-3\\f358d0070d945bea81d37d8159d3a427\\transformed\\core-1.5.0\\res\\values-v18\\values.xml",
                     "from": {
                         "startLines": "4,12",
                         "startColumns": "0,0",

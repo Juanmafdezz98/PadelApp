@@ -18,10 +18,24 @@
     <string name="no_balls">No. Balls</string>
     <string name="no_ball">No. Balls</string>
     <string name="spin">Spin</string>
-    <string name="feed">Feed</string>
+    <string name="feed">Interval</string>
     <string name="height">Height</string>
     <string name="number_balls">Balls:</string>
     <string name="speed2">Speed:</string>
-    <string name="feed2">Feed:</string>
+    <string name="feed2">Interval:</string>
     <string name="spin2">Spin:</string>
+    <string name="height2">Height:</string>
+    <string name="reset">Reset</string>
+    <string name="send">Send</string>
+    <string name="ball_parameters">Ball Parameters</string>
+    <string name="lobInfo">LOB: Golpe alto y profundo que hacen que la pelota tenga una trayectoria alta y curva, para superar al oponente y llevarlo al fondo de la pista.</string>
+    <string name="wallInfo">WALL SHOT: Golpe dirigido hacia la pared lateral, para hacer rebotar la pelota en la pared y crear un ángulo difícil para el oponente.</string>
+    <string name="dropInfo">DROP SHOT: Golpe corto y bajo que caen cerca de la red, para sorprender al oponente y hacer que corra cuando está en el fondo de la pista.</string>
+    <string name="smashInfo">SMASH: Golpe potentes y rápido que se ejecuta desde arriba de la cabeza, para terminar un punto con fuerza al golpear la pelota hacia abajo.</string>
+    <string name="seepdInfo">SPEED: La rapidez con la que la pelota es lanzada por el robot, medida en km/h.</string>
+    <string name="spinInfo">SPIN: La rotación impartida a la pelota mientras se lanza, afectando su trayectoria y rebote.</string>
+    <string name="ballsInfo">No. BALLS: La cantidad de pelotas que el robot lanzará en cada ciclo de lanzamiento.</string>
+    <string name="heightInfo">HEIGHT: La altura a la que se lanza la pelota sobre la altura de la red, medida en centimetros.</string>
+    <string name="intervalInfo">INTERVAL: El tiempo entre cada lanzamiento de pelota, medido en segundos.</string>
+    <string name="ok">OK</string>
 </resources>

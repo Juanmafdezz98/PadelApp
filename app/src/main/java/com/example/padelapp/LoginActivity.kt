@@ -20,7 +20,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.withTimeoutOrNull
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
@@ -37,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var socket: Socket
     private val context = this@LoginActivity
     private val port: Int = 8080
+    private val conn: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,10 +90,11 @@ class LoginActivity : AppCompatActivity() {
         fabNext.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
             if (::socket.isInitialized) {
-                intent.putExtra("IP", ip.toString())
+                //intent.putExtra("IP", ip.hostName.toString())
                 startActivity(intent)
+            }else{
+                noConnected()
             }
-            noConnected()
         }
     }
 
@@ -116,12 +117,32 @@ class LoginActivity : AppCompatActivity() {
     private suspend fun connect(address: InetAddress) {
         val timeout = 3000L // 3 seconds ---> Doesn't work
         try {
-            val result = withTimeoutOrNull(timeout) {
+            /*val result = withTimeoutOrNull(timeout) {
                 withContext(IO) {
                     socket = Socket(address, port)
                 }
+            }*/
+            socket = withContext(IO) {
+                Socket(address, port)
             }
-            if (result == null) {
+            if (::socket.isInitialized) {
+                context.runOnUiThread {
+                    Toast.makeText(
+                        context,
+                        "Connection with server was established correctly",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } else {
+                context.runOnUiThread {
+                    Toast.makeText(
+                        context,
+                        "Server is not available at this moment. Please, try again later.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+            /*if (result == null) {
                 context.runOnUiThread {
                     Toast.makeText(
                         context,
@@ -129,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            }
+            }*/
         } catch (e: TimeoutCancellationException) {
             context.runOnUiThread {
                 Toast.makeText(

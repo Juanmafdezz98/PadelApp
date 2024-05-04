@@ -4,7 +4,7 @@
             "outputFile": "com.example.padelapp-mergeDebugResources-29:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\juanm\\.gradle\\caches\\transforms-3\\7fd3f7b85cd11588703f2df3b96d3544\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\juanm\\.gradle\\caches\\transforms-3\\70e66d4ab5673ed758fcfe9842c0a9c7\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

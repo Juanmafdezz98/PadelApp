@@ -11,7 +11,7 @@
     tools:context=".PrincipalActivity">
 
     <TextView
-        android:id="@+id/tv_info"
+        android:id="@+id/tvInfo"
         android:layout_width="0dp"
 
         android:layout_height="wrap_content"
@@ -29,7 +29,6 @@
         android:id="@+id/cvModes"
         android:layout_width="380dp"
         android:layout_height="220dp"
-        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="35dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +110,7 @@
                 android:background="@color/background_component"
                 android:importantForAccessibility="no"
                 android:scaleType="fitCenter"
-                android:src="@drawable/info" />
+                android:src="@drawable/info"/>
 
         </FrameLayout>
 
@@ -162,7 +161,8 @@
                 android:layout_marginBottom="5dp"
                 android:stepSize="5"
                 android:valueFrom="40"
-                android:valueTo="150" />
+                android:valueTo="150"
+                app:labelBehavior="gone"/>
 
         </LinearLayout>
 
@@ -338,8 +338,9 @@
                 android:text="@string/feed"
                 android:textAllCaps="true"
                 android:textColor="#040F87"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"/>
 
             <TextView
                 android:id="@+id/tvFeed"
@@ -423,13 +424,15 @@
                 tools:text="10" />
 
             <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeight"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:rotation="270"
                 android:stepSize="5"
                 android:valueFrom="0"
-                android:valueTo="50" />
+                android:valueTo="50"
+                app:labelBehavior="gone"/>
 
         </LinearLayout>
 
@@ -444,7 +447,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvElev"
         android:layout_marginTop="5dp"
-        app:cardCornerRadius="15dp">
+        app:cardCornerRadius="15dp"
+        android:layout_marginHorizontal="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -456,7 +460,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ball Parameters"
+                android:text="@string/ball_parameters"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
@@ -519,7 +523,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="30dp"/>
+                android:layout_marginStart="25dp"/>
 
             <TextView
                 android:id="@+id/tvFeedP"
@@ -549,14 +553,14 @@
                 android:text="@string/spin2"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/tvSpinP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="10"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#070F67"/>
@@ -564,21 +568,52 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/spin2"
+                android:text="@string/height2"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="35dp"/>
+                android:layout_marginStart="30dp"/>
 
             <TextView
-                android:id="@+id/tvElevP"
+                android:id="@+id/tvHeightP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="10"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="3dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#070F67"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_component"
+            android:paddingStart="65dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="5dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="105dp">
+
+            <Button
+                android:id="@+id/btReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                style="@style/ThemeOverlay.Material3.Button"/>
+
+            <Button
+                android:id="@+id/btSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginStart="90dp"
+                style="@style/ThemeOverlay.Material3.Button"/>
 
         </LinearLayout>
 
