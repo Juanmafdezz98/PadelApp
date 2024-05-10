@@ -89,7 +89,7 @@
                 android:layout_gravity="end|bottom"
                 android:background="@drawable/roundedbuttons"
                 android:text="@string/smashes"
-                android:textSize="17.2sp"
+                android:textSize="23.4sp"
                 android:textStyle="bold" />
 
             <Button

@@ -16,17 +16,22 @@ import com.google.android.material.slider.RangeSlider
 class PrincipalActivity : AppCompatActivity() {
 
     //Variables
-    private var speed: Int = 40
-    private var balls: Int = 5
-    private var spin: Int = 2
-    private var elev: Int = 5
-    private var feed: Int = 5
-    private val context = this@PrincipalActivity
-    private var ip = "192.168.1.131"
 
+    /*Here we created a Map with defaults values of the parameters so if in future we want change this values is easier and we need to change only this part of the code
+    * Also in the future we could add a settings button to change and save our preferences and default data as these values and would need only to change this persistence */
+    private var defaultsMap: Map<String, Int> =
+        mapOf("Speed" to 40, "Balls" to 5, "Spin" to 2, "Elev" to 5, "Feed" to 5)
+
+    private var speed: Int = defaultsMap["Speed"]!!
+    private var balls: Int = defaultsMap["Balls"]!!
+    private var spin: Int = defaultsMap["Spin"]!!
+    private var elev: Int = defaultsMap["Elev"]!!
+    private var feed: Int = defaultsMap["Feed"]!!
+    private var flagInit: Boolean = true
+    private val context = this@PrincipalActivity
 
     //Variables xml
-    //private var ip: String? = intent.getStringExtra("IP")
+    private lateinit var ip: String
     private lateinit var tvInfo: TextView
     private lateinit var btLobs: Button
     private lateinit var btDrops: Button
@@ -67,22 +72,27 @@ class PrincipalActivity : AppCompatActivity() {
 
         initComponents()
         initListeners()
-        initUI()
+        setUI()
+        flagInit = false
     }
 
     private fun initListeners() {
+
         btInfo.setOnClickListener {
-            val intent = Intent(this,InfoActivity::class.java)
+            val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
         }
+
         rsSpeed.addOnChangeListener { _, value, _ ->
             speed = value.toInt()
             setSpeed()
         }
+
         rsHeight.addOnChangeListener { _, value, _ ->
             elev = value.toInt()
             setHeight()
         }
+
         fabAddBall.setOnClickListener {
             if (balls == 20) {
                 context.runOnUiThread {
@@ -97,6 +107,7 @@ class PrincipalActivity : AppCompatActivity() {
                 setBalls()
             }
         }
+
         fabMinusBall.setOnClickListener {
             if (balls == 1) {
                 context.runOnUiThread {
@@ -112,6 +123,7 @@ class PrincipalActivity : AppCompatActivity() {
             }
 
         }
+
         fabAddFeed.setOnClickListener {
             if (feed == 15) {
                 context.runOnUiThread {
@@ -126,6 +138,7 @@ class PrincipalActivity : AppCompatActivity() {
                 setFeed()
             }
         }
+
         fabMinusFeed.setOnClickListener {
             if (feed == 1) {
                 context.runOnUiThread {
@@ -140,6 +153,7 @@ class PrincipalActivity : AppCompatActivity() {
                 setFeed()
             }
         }
+
         fabAddSpin.setOnClickListener {
             if (spin == 10) {
                 context.runOnUiThread {
@@ -154,6 +168,7 @@ class PrincipalActivity : AppCompatActivity() {
                 setSpin()
             }
         }
+
         fabMinusSpin.setOnClickListener {
             if (spin == 0) {
                 context.runOnUiThread {
@@ -168,16 +183,28 @@ class PrincipalActivity : AppCompatActivity() {
                 setSpin()
             }
         }
+
         btSend.setOnClickListener {
 
         }
 
+        btReset.setOnClickListener {
+            speed = defaultsMap["Speed"]!!
+            balls = defaultsMap["Balls"]!!
+            spin = defaultsMap["Spin"]!!
+            feed = defaultsMap["Feed"]!!
+            elev = defaultsMap["Elev"]!!
+            rsSpeed.setValues(speed.toFloat())
+            rsHeight.setValues(elev.toFloat())
+            setUI()
+        }
 
     }
 
     private fun initComponents() {
+        ip = intent.extras?.getString("IP").orEmpty()
         tvInfo = findViewById(R.id.tvInfo)
-        tvInfo.text = "ip: ${ip}      Port: 8080"
+        tvInfo.text = "ip: $ip      Port: 8080"
         btLobs = findViewById(R.id.btnLobs)
         btDrops = findViewById(R.id.btnDrops)
         btWalls = findViewById(R.id.btnWall)
@@ -205,12 +232,12 @@ class PrincipalActivity : AppCompatActivity() {
         btReset = findViewById(R.id.btReset)
     }
 
-    private fun initUI() {
+    private fun setUI() {
+        setFeed()
         setSpeed()
         setBalls()
         setSpin()
         setHeight()
-        setFeed()
     }
 
     private fun setFeed() {

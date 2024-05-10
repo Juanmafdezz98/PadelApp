@@ -146,6 +146,7 @@
         android:layout_gravity="center"
         android:text="@string/ok"
         android:textSize="16sp"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:backgroundTint="#312A5C"/>
 

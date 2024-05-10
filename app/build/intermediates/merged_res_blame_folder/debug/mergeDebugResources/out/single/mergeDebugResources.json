@@ -20,10 +20,6 @@
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.padelapp-debug-31:/layout_activity_shots_info.xml.flat",
-        "source": "com.example.padelapp-main-33:/layout/activity_shots_info.xml"
-    },
-    {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\xml\\backup_rules.xml"
     },
@@ -74,6 +70,10 @@
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.padelapp-debug-31:/layout_activity_principal.xml.flat",
+        "source": "com.example.padelapp-main-33:/layout/activity_principal.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_ip_address.xml.flat",

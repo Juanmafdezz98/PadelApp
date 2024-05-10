@@ -89,8 +89,8 @@ class LoginActivity : AppCompatActivity() {
 
         fabNext.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
+            intent.putExtra("IP", etIP.text.toString())
             if (::socket.isInitialized) {
-                //intent.putExtra("IP", ip.hostName.toString())
                 startActivity(intent)
             }else{
                 noConnected()

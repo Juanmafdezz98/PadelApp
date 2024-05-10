@@ -64,7 +64,6 @@ id tvSpeedP
 id tvSpin
 id tvSpinP
 id tv_connect
-layout activity_info
 layout activity_login
 layout activity_main
 layout activity_principal
