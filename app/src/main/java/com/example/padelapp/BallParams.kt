@@ -7,11 +7,11 @@ This way we can assure if in the past we want to add a new parameter to the
 thrown balls we can just adjusting this class and including it easily*/
 
 class BallParams(
-    val numBalls: Int,  //Number of balls we'll be thrown
-    val speed: Int,     //Ball's speed
-    val elev: Int,      //Height from where the balls are thrown
-    val spin: Int,      //Ball's spin to get curve effect
-    val feed: Int       //Number of seconds between balls
+    val NumberOfBalls: Int,  //Number of balls we'll be thrown
+    val Speed: Int,     //Ball's speed
+    val HeightnAboveNet: Int,      //Height from where the balls are thrown
+    val Spin: Int,      //Ball's spin to get curve effect
+    val Feed: Int       //Number of seconds between balls
 ){
 
 }

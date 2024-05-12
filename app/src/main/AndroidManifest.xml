@@ -18,9 +18,6 @@
             android:name=".InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoActivity"
-            android:exported="false" />
-        <activity
             android:name=".PrincipalActivity"
             android:exported="false" />
         <activity

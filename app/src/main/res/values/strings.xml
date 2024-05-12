@@ -4,7 +4,7 @@
     <string name="welcome_to_padel_app"> Welcome to Padel App</string>
     <string name="ip_address">IP address</string>
     <string name="connect">Introduce the Robot IP address to connect</string>
-    <string name="port">Port: 8080</string>
+    <string name="port">Port</string>
     <string name="btn_connect">Connect</string>
     <string name="send_message">Send Message</string>
     <string name="received">Message correctly received</string>

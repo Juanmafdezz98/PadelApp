@@ -2,6 +2,7 @@ package com.example.padelapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -12,6 +13,17 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.BufferedWriter
+import java.io.OutputStreamWriter
+import java.net.InetAddress
+import java.net.Socket
 
 class PrincipalActivity : AppCompatActivity() {
 
@@ -27,11 +39,12 @@ class PrincipalActivity : AppCompatActivity() {
     private var spin: Int = defaultsMap["Spin"]!!
     private var elev: Int = defaultsMap["Elev"]!!
     private var feed: Int = defaultsMap["Feed"]!!
-    private var flagInit: Boolean = true
     private val context = this@PrincipalActivity
+    private lateinit var socket: Socket
 
     //Variables xml
     private lateinit var ip: String
+    private lateinit var port: String
     private lateinit var tvInfo: TextView
     private lateinit var btLobs: Button
     private lateinit var btDrops: Button
@@ -73,9 +86,9 @@ class PrincipalActivity : AppCompatActivity() {
         initComponents()
         initListeners()
         setUI()
-        flagInit = false
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
 
         btInfo.setOnClickListener {
@@ -129,7 +142,7 @@ class PrincipalActivity : AppCompatActivity() {
                 context.runOnUiThread {
                     Toast.makeText(
                         context,
-                        "The robot cannot throw balls with greater interval than a ball per 15 seconds",
+                        "The robot cannot throw with a greater interval than 15 seconds per ball",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -185,7 +198,13 @@ class PrincipalActivity : AppCompatActivity() {
         }
 
         btSend.setOnClickListener {
-
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    connectSocket(InetAddress.getByName(ip), port.toInt())
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+            }
         }
 
         btReset.setOnClickListener {
@@ -201,10 +220,27 @@ class PrincipalActivity : AppCompatActivity() {
 
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
+    private suspend fun connectSocket(address: InetAddress, port: Int) {
+        try {
+            socket = withContext(Dispatchers.IO) {
+                Socket(address, port)
+            }
+            if (::socket.isInitialized) {
+                GlobalScope.launch(Dispatchers.IO) {
+                    sendJsonToServer()
+                }
+            }
+        } catch (e: Exception) {
+            Log.i("Socket", "Exception")
+        }
+    }
+
     private fun initComponents() {
         ip = intent.extras?.getString("IP").orEmpty()
+        port = intent.extras?.getString("PORT").orEmpty()
         tvInfo = findViewById(R.id.tvInfo)
-        tvInfo.text = "ip: $ip      Port: 8080"
+        tvInfo.text = "ip: $ip      Port: $port"
         btLobs = findViewById(R.id.btnLobs)
         btDrops = findViewById(R.id.btnDrops)
         btWalls = findViewById(R.id.btnWall)
@@ -263,6 +299,19 @@ class PrincipalActivity : AppCompatActivity() {
     private fun setSpeed() {
         tvSpeed.text = speed.toString()
         tvSpeedP.text = speed.toString()
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    private fun sendJsonToServer() {
+        val params = BallParams(balls, speed, elev, spin, feed)
+        val gson = Gson()
+        val json = gson.toJson(params)
+
+        val writer = BufferedWriter(OutputStreamWriter(socket.getOutputStream()))
+        writer.write(json)
+        writer.newLine()
+        writer.flush()
+
     }
 
 }

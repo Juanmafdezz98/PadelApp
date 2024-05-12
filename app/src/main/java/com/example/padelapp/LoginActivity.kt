@@ -23,20 +23,20 @@ import kotlinx.coroutines.withContext
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
+import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
 
     //Variables
     private lateinit var ip: InetAddress
     private lateinit var etIP: EditText
+    private lateinit var etPort: EditText
     private lateinit var btConnect: Button
     private lateinit var tvConnect: TextView
     private lateinit var fabNext: FloatingActionButton
     private lateinit var btSend: Button
     private lateinit var socket: Socket
     private val context = this@LoginActivity
-    private val port: Int = 8080
-    private val conn: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,13 +53,23 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    private fun initComponents() {
+        btConnect = findViewById(R.id.btn_connect)
+        etIP = findViewById(R.id.ip_add)
+        etPort = findViewById(R.id.etPort)
+        tvConnect = findViewById(R.id.tv_connect)
+        btSend = findViewById(R.id.btSend)
+        fabNext = findViewById(R.id.btnForward)
+    }
+
     @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
         btConnect.setOnClickListener {
             try {
                 ip = InetAddress.getByName(etIP.text.toString())
+                val port = etPort.text.toString().toInt()
                 CoroutineScope(IO).launch {
-                    connect(ip)
+                    connect(ip, port)
                 }
             } catch (e: Exception) {
                 Log.i("Socket", "Exception")
@@ -90,20 +100,13 @@ class LoginActivity : AppCompatActivity() {
         fabNext.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
             intent.putExtra("IP", etIP.text.toString())
+            intent.putExtra("PORT", etPort.text.toString())
             if (::socket.isInitialized) {
                 startActivity(intent)
             }else{
                 noConnected()
             }
         }
-    }
-
-    private fun initComponents() {
-        btConnect = findViewById(R.id.btn_connect)
-        etIP = findViewById(R.id.ip_add)
-        tvConnect = findViewById(R.id.tv_connect)
-        btSend = findViewById(R.id.btSend)
-        fabNext = findViewById(R.id.btnForward)
     }
 
     private fun noConnected() {
@@ -114,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
         ).show()
     }
 
-    private suspend fun connect(address: InetAddress) {
+    private suspend fun connect(address: InetAddress, port: Int) {
         val timeout = 3000L // 3 seconds ---> Doesn't work
         try {
             /*val result = withTimeoutOrNull(timeout) {

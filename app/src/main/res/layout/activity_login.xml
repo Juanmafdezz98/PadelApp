@@ -58,10 +58,11 @@
             android:digits="0123456789.">
         </EditText>
 
-        <TextView
+        <EditText
+            android:id="@+id/etPort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/port"
+            android:hint="@string/port"
             android:background="@drawable/ip_address"
             android:layout_margin="10dp"
             android:padding="8dp"
@@ -69,8 +70,11 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"
-            app:drawableStartCompat="@drawable/va_connection">
-        </TextView>
+            app:drawableStartCompat="@drawable/va_connection"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:digits="0123456789.">
+        </EditText>
 
         <Button
             android:id="@+id/btn_connect"

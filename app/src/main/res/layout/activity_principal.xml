@@ -500,14 +500,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/speed2"
+                android:text="@string/height2"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="30dp"/>
+                android:layout_marginStart="25dp"/>
 
             <TextView
-                android:id="@+id/tvSpeedP"
+                android:id="@+id/tvHeightP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="10"
@@ -523,7 +523,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="25dp"/>
+                android:layout_marginStart="23dp"/>
 
             <TextView
                 android:id="@+id/tvFeedP"
@@ -568,14 +568,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/height2"
+                android:text="@string/speed2"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="30dp"/>
+                android:layout_marginStart="25dp"/>
 
             <TextView
-                android:id="@+id/tvHeightP"
+                android:id="@+id/tvSpeedP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="10"

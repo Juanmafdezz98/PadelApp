@@ -29,7 +29,7 @@
     <string name="no_balls">No. Balls</string>
     <string name="number_balls">Balls:</string>
     <string name="ok">OK</string>
-    <string name="port">Port: 8080</string>
+    <string name="port">Port</string>
     <string name="received">Message correctly received</string>
     <string name="reset">Reset</string>
     <string name="seepdInfo">SPEED: La rapidez con la que la pelota es lanzada por el robot, medida en km/h.</string>

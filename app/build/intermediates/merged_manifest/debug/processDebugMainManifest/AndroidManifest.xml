@@ -33,9 +33,6 @@
             android:name="com.example.padelapp.InfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.padelapp.InfoActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.padelapp.PrincipalActivity"
             android:exported="false" />
         <activity
