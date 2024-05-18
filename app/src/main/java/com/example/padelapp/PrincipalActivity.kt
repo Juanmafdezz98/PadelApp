@@ -198,6 +198,8 @@ class PrincipalActivity : AppCompatActivity() {
         }
 
         btSend.setOnClickListener {
+            val intent = Intent(this,ExecutingActivity::class.java)
+            putExtras(intent)
             try {
                 CoroutineScope(Dispatchers.IO).launch {
                     connectSocket(InetAddress.getByName(ip), port.toInt())
@@ -205,6 +207,7 @@ class PrincipalActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.i("Socket", "Exception")
             }
+            startActivity(intent)
         }
 
         btReset.setOnClickListener {
@@ -218,6 +221,13 @@ class PrincipalActivity : AppCompatActivity() {
             setUI()
         }
 
+    }
+
+    private fun putExtras(intent: Intent) {
+        intent.putExtra("IP", ip)
+        intent.putExtra("PORT",port)
+        intent.putExtra("BALLS",balls)
+        intent.putExtra("FEED",feed)
     }
 
     @OptIn(DelicateCoroutinesApi::class)

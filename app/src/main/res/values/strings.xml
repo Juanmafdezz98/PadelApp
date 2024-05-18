@@ -38,4 +38,8 @@
     <string name="heightInfo">HEIGHT: La altura a la que se lanza la pelota sobre la altura de la red, medida en centimetros.</string>
     <string name="intervalInfo">INTERVAL: El tiempo entre cada lanzamiento de pelota, medido en segundos.</string>
     <string name="ok">OK</string>
+    <string name="pause">Pause</string>
+    <string name="play">play</string>
+    <string name="finish_execution">Finish Execution</string>
+    <string name="next_ball_in">Next ball in...</string>
 </resources>

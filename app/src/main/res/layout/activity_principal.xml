@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="ip: xxx.xxx.x.xxx      Port: 8080" />
+        tools:text="ip: 192.168.1.131      Port: 8080"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvModes"

@@ -18,6 +18,7 @@
     <string name="fast_modes">Fast Modes</string>
     <string name="feed">Interval</string>
     <string name="feed2">Interval:</string>
+    <string name="finish_execution">Finish Execution</string>
     <string name="height">Height</string>
     <string name="height2">Height:</string>
     <string name="heightInfo">HEIGHT: La altura a la que se lanza la pelota sobre la altura de la red, medida en centimetros.</string>
@@ -25,10 +26,13 @@
     <string name="ip_address">IP address</string>
     <string name="lobInfo">LOB: Golpe alto y profundo que hacen que la pelota tenga una trayectoria alta y curva, para superar al oponente y llevarlo al fondo de la pista.</string>
     <string name="lobs">LOBS</string>
+    <string name="next_ball_in">Next ball in...</string>
     <string name="no_ball">No. Balls</string>
     <string name="no_balls">No. Balls</string>
     <string name="number_balls">Balls:</string>
     <string name="ok">OK</string>
+    <string name="pause">Pause</string>
+    <string name="play">play</string>
     <string name="port">Port</string>
     <string name="received">Message correctly received</string>
     <string name="reset">Reset</string>

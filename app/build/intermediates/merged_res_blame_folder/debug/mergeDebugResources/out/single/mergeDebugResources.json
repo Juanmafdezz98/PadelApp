@@ -4,6 +4,10 @@
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\wall.jpg"
     },
     {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_pause.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\pause.xml"
+    },
+    {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
@@ -20,6 +24,10 @@
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_play.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\play.xml"
+    },
+    {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\xml\\backup_rules.xml"
     },
@@ -34,6 +42,10 @@
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\layout_activity_executing.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\layout\\activity_executing.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -64,16 +76,16 @@
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_end.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\end.xml"
+    },
+    {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "com.example.padelapp-debug-31:/layout_activity_principal.xml.flat",
-        "source": "com.example.padelapp-main-33:/layout/activity_principal.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_ip_address.xml.flat",
@@ -106,6 +118,14 @@
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_va_connection.xml.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\va_connection.xml"
+    },
+    {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_stopwatchbkg.png.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\stopwatchbkg.png"
+    },
+    {
+        "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_finish.xml.flat",
+        "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\drawable\\finish.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_roundedbuttons.xml.flat",
@@ -154,6 +174,10 @@
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-main-33:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.padelapp-debug-31:/layout_activity_executing.xml.flat",
+        "source": "com.example.padelapp-main-33:/layout/activity_executing.xml"
     },
     {
         "merged": "C:\\Users\\juanm\\.gradle\\daemon\\8.4\\com.example.padelapp-debug-31:\\drawable_info.png.flat",
