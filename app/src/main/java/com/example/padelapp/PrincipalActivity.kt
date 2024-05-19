@@ -1,5 +1,6 @@
 package com.example.padelapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -41,6 +43,7 @@ class PrincipalActivity : AppCompatActivity() {
     private var feed: Int = defaultsMap["Feed"]!!
     private val context = this@PrincipalActivity
     private lateinit var socket: Socket
+    private lateinit var socketFast: Socket
 
     //Variables xml
     private lateinit var ip: String
@@ -198,7 +201,7 @@ class PrincipalActivity : AppCompatActivity() {
         }
 
         btSend.setOnClickListener {
-            val intent = Intent(this,ExecutingActivity::class.java)
+            val intent = Intent(this, ExecutingActivity::class.java)
             putExtras(intent)
             try {
                 CoroutineScope(Dispatchers.IO).launch {
@@ -221,13 +224,56 @@ class PrincipalActivity : AppCompatActivity() {
             setUI()
         }
 
+        btLobs.setOnClickListener {
+            try {
+                CoroutineScope(IO).launch {
+                    sendFastMode(fastModeShot.LOBS, InetAddress.getByName(ip), port.toInt())
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+            }
+        }
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    private suspend fun sendFastMode(mode: fastModeShot, address: InetAddress, port: Int) {
+        try {
+            socketFast = withContext(IO) {
+                Socket(address, port)
+            }
+            if (::socket.isInitialized) {
+                GlobalScope.launch(IO) {
+                    val outPutStream = OutputStreamWriter(socket.getOutputStream())
+                    when (mode) {
+                        fastModeShot.LOBS -> {
+                            outPutStream.write("LOBS")
+                            outPutStream.flush()
+                        }
+                        fastModeShot.DROPS -> {
+                            outPutStream.write("DROPS")
+                            outPutStream.flush()
+                        }
+                        fastModeShot.WALLS -> {
+                            outPutStream.write("WALLS")
+                            outPutStream.flush()
+                        }
+                        fastModeShot.SMASH -> {
+                            outPutStream.write("SMASH")
+                            outPutStream.flush()
+                        }
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            Log.i("Socket", "Exception")
+        }
     }
 
     private fun putExtras(intent: Intent) {
         intent.putExtra("IP", ip)
-        intent.putExtra("PORT",port)
-        intent.putExtra("BALLS",balls)
-        intent.putExtra("FEED",feed)
+        intent.putExtra("PORT", port)
+        intent.putExtra("BALLS", balls)
+        intent.putExtra("FEED", feed)
     }
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -246,6 +292,7 @@ class PrincipalActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initComponents() {
         ip = intent.extras?.getString("IP").orEmpty()
         port = intent.extras?.getString("PORT").orEmpty()

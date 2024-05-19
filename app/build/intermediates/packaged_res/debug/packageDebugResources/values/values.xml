@@ -26,7 +26,7 @@
     <string name="ip_address">IP address</string>
     <string name="lobInfo">LOB: Golpe alto y profundo que hacen que la pelota tenga una trayectoria alta y curva, para superar al oponente y llevarlo al fondo de la pista.</string>
     <string name="lobs">LOBS</string>
-    <string name="next_ball_in">Next ball in...</string>
+    <string name="next_ball_in">Next ball in…</string>
     <string name="no_ball">No. Balls</string>
     <string name="no_balls">No. Balls</string>
     <string name="number_balls">Balls:</string>
@@ -50,6 +50,7 @@
     <string name="wallInfo">WALL SHOT: Golpe dirigido hacia la pared lateral, para hacer rebotar la pelota en la pared y crear un ángulo difícil para el oponente.</string>
     <string name="wall_shots">Wall Shots</string>
     <string name="welcome_to_padel_app"> Welcome to Padel App</string>
+    <string name="zero">00</string>
     <style name="Base.Theme.PadelAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         

@@ -41,5 +41,6 @@
     <string name="pause">Pause</string>
     <string name="play">play</string>
     <string name="finish_execution">Finish Execution</string>
-    <string name="next_ball_in">Next ball in...</string>
+    <string name="next_ball_in">Next ball in…</string>
+    <string name="zero">00</string>
 </resources>

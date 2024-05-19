@@ -3095,6 +3095,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable pause
 drawable play
+drawable progress_bar
 drawable roundedbuttons
 drawable stopwatchbkg
 drawable test_level_drawable
@@ -3202,8 +3203,6 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btOK
-id btPause
-id btPlay
 id btReset
 id btSend
 id btStart
@@ -3370,9 +3369,9 @@ id legacy
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
-id llButtons
 id m3_side_sheet
 id main
 id marquee
@@ -3487,6 +3486,7 @@ id pin
 id position
 id postLayout
 id pressed
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -3584,6 +3584,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3610,6 +3611,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvBalls
+id tvBallsCount
 id tvBallsP
 id tvFeed
 id tvFeedP
@@ -4056,6 +4058,7 @@ string status_bar_notification_info_overflow
 string wallInfo
 string wall_shots
 string welcome_to_padel_app
+string zero
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

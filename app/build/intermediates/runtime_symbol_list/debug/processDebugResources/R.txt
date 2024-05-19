@@ -3094,6 +3094,7 @@ int drawable notification_tile_bg 0x7f0700ec
 int drawable notify_panel_notification_icon_bg 0x7f0700ed
 int drawable pause 0x7f0700f6
 int drawable play 0x7f0700f7
+int drawable progress_bar 0x7f0700f9
 int drawable roundedbuttons 0x7f0700ee
 int drawable stopwatchbkg 0x7f0700f8
 int drawable test_level_drawable 0x7f0700ef
@@ -3201,8 +3202,6 @@ int id bounceBoth 0x7f080060
 int id bounceEnd 0x7f080061
 int id bounceStart 0x7f080062
 int id btOK 0x7f080063
-int id btPause 0x7f08021a
-int id btPlay 0x7f08021b
 int id btReset 0x7f080064
 int id btSend 0x7f080065
 int id btStart 0x7f080066
@@ -3369,9 +3368,9 @@ int id legacy 0x7f080104
 int id line1 0x7f080105
 int id line3 0x7f080106
 int id linear 0x7f080107
+int id linearLayout 0x7f08021f
 int id listMode 0x7f080108
 int id list_item 0x7f080109
-int id llButtons 0x7f08021d
 int id m3_side_sheet 0x7f08010a
 int id main 0x7f08010b
 int id marquee 0x7f08010c
@@ -3486,6 +3485,7 @@ int id pin 0x7f080178
 int id position 0x7f080179
 int id postLayout 0x7f08017a
 int id pressed 0x7f08017b
+int id progressBar 0x7f080220
 int id progress_circular 0x7f08017c
 int id progress_horizontal 0x7f08017d
 int id radio 0x7f08017e
@@ -3583,6 +3583,7 @@ int id textSpacerNoButtons 0x7f0801d9
 int id textSpacerNoTitle 0x7f0801da
 int id textStart 0x7f0801db
 int id textTop 0x7f0801dc
+int id textView 0x7f080221
 int id text_input_end_icon 0x7f0801dd
 int id text_input_error_icon 0x7f0801de
 int id text_input_start_icon 0x7f0801df
@@ -3609,6 +3610,7 @@ int id transition_scene_layoutid_cache 0x7f0801f3
 int id transition_transform 0x7f0801f4
 int id triangle 0x7f0801f5
 int id tvBalls 0x7f0801f6
+int id tvBallsCount 0x7f080222
 int id tvBallsP 0x7f0801f7
 int id tvFeed 0x7f0801f8
 int id tvFeedP 0x7f0801f9
@@ -4055,6 +4057,7 @@ int string status_bar_notification_info_overflow 0x7f0f00c9
 int string wallInfo 0x7f0f00ca
 int string wall_shots 0x7f0f00cb
 int string welcome_to_padel_app 0x7f0f00cc
+int string zero 0x7f0f00d1
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
 int style Animation_AppCompat_Dialog 0x7f100002
