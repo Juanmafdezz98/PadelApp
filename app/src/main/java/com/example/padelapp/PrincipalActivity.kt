@@ -17,7 +17,6 @@ import com.google.android.material.slider.RangeSlider
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -91,7 +90,6 @@ class PrincipalActivity : AppCompatActivity() {
         setUI()
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun initListeners() {
 
         btInfo.setOnClickListener {
@@ -204,7 +202,7 @@ class PrincipalActivity : AppCompatActivity() {
             val intent = Intent(this, ExecutingActivity::class.java)
             putExtras(intent)
             try {
-                CoroutineScope(Dispatchers.IO).launch {
+                CoroutineScope(IO).launch {
                     connectSocket(InetAddress.getByName(ip), port.toInt())
                 }
             } catch (e: Exception) {
@@ -227,7 +225,34 @@ class PrincipalActivity : AppCompatActivity() {
         btLobs.setOnClickListener {
             try {
                 CoroutineScope(IO).launch {
-                    sendFastMode(fastModeShot.LOBS, InetAddress.getByName(ip), port.toInt())
+                    sendFastMode(FastModeShot.LOBS, InetAddress.getByName(ip), port.toInt())
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+            }
+        }
+        btWalls.setOnClickListener {
+            try {
+                CoroutineScope(IO).launch {
+                    sendFastMode(FastModeShot.WALLS, InetAddress.getByName(ip), port.toInt())
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+            }
+        }
+        btDrops.setOnClickListener {
+            try {
+                CoroutineScope(IO).launch {
+                    sendFastMode(FastModeShot.DROPS, InetAddress.getByName(ip), port.toInt())
+                }
+            } catch (e: Exception) {
+                Log.i("Socket", "Exception")
+            }
+        }
+        btSmash.setOnClickListener {
+            try {
+                CoroutineScope(IO).launch {
+                    sendFastMode(FastModeShot.SMASH, InetAddress.getByName(ip), port.toInt())
                 }
             } catch (e: Exception) {
                 Log.i("Socket", "Exception")
@@ -236,29 +261,32 @@ class PrincipalActivity : AppCompatActivity() {
     }
 
     @OptIn(DelicateCoroutinesApi::class)
-    private suspend fun sendFastMode(mode: fastModeShot, address: InetAddress, port: Int) {
+    private suspend fun sendFastMode(mode: FastModeShot, address: InetAddress, port: Int) {
         try {
             socketFast = withContext(IO) {
                 Socket(address, port)
             }
-            if (::socket.isInitialized) {
+            if (::socketFast.isInitialized) {
                 GlobalScope.launch(IO) {
-                    val outPutStream = OutputStreamWriter(socket.getOutputStream())
+                    val outPutStream = OutputStreamWriter(socketFast.getOutputStream())
                     when (mode) {
-                        fastModeShot.LOBS -> {
-                            outPutStream.write("LOBS")
+                        FastModeShot.LOBS -> {
+                            outPutStream.write("LOBS SEQUENCE EXECUTING....")
                             outPutStream.flush()
                         }
-                        fastModeShot.DROPS -> {
-                            outPutStream.write("DROPS")
+
+                        FastModeShot.DROPS -> {
+                            outPutStream.write("DROP SHOTS SEQUENCE EXECUTING....")
                             outPutStream.flush()
                         }
-                        fastModeShot.WALLS -> {
-                            outPutStream.write("WALLS")
+
+                        FastModeShot.WALLS -> {
+                            outPutStream.write("WALL SHOTS SEQUENCE EXECUTING....")
                             outPutStream.flush()
                         }
-                        fastModeShot.SMASH -> {
-                            outPutStream.write("SMASH")
+
+                        FastModeShot.SMASH -> {
+                            outPutStream.write("SMASHES SEQUENCE EXECUTING....")
                             outPutStream.flush()
                         }
                     }
@@ -279,11 +307,11 @@ class PrincipalActivity : AppCompatActivity() {
     @OptIn(DelicateCoroutinesApi::class)
     private suspend fun connectSocket(address: InetAddress, port: Int) {
         try {
-            socket = withContext(Dispatchers.IO) {
+            socket = withContext(IO) {
                 Socket(address, port)
             }
             if (::socket.isInitialized) {
-                GlobalScope.launch(Dispatchers.IO) {
+                GlobalScope.launch(IO) {
                     sendJsonToServer()
                 }
             }
@@ -358,7 +386,6 @@ class PrincipalActivity : AppCompatActivity() {
         tvSpeedP.text = speed.toString()
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun sendJsonToServer() {
         val params = BallParams(balls, speed, elev, spin, feed)
         val gson = Gson()

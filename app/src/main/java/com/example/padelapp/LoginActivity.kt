@@ -23,7 +23,6 @@ import kotlinx.coroutines.withContext
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
-import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
 
@@ -118,13 +117,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private suspend fun connect(address: InetAddress, port: Int) {
-        val timeout = 3000L // 3 seconds ---> Doesn't work
         try {
-            /*val result = withTimeoutOrNull(timeout) {
-                withContext(IO) {
-                    socket = Socket(address, port)
-                }
-            }*/
             socket = withContext(IO) {
                 Socket(address, port)
             }
@@ -145,15 +138,6 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-            /*if (result == null) {
-                context.runOnUiThread {
-                    Toast.makeText(
-                        context,
-                        "Server is not available. Please try again later.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }*/
         } catch (e: TimeoutCancellationException) {
             context.runOnUiThread {
                 Toast.makeText(

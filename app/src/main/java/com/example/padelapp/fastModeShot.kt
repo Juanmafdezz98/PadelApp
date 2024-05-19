@@ -1,6 +1,6 @@
 package com.example.padelapp
 
-enum class fastModeShot {
+enum class FastModeShot {
     LOBS,
     DROPS,
     WALLS,
