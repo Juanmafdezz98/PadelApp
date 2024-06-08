@@ -1,4 +1,4 @@
-#Fri May 03 18:40:49 CEST 2024
+#Sat Jun 08 14:58:08 CEST 2024
 base.0=C\:\\Users\\juanm\\AndroidStudioProjects\\PadelAPP\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=C\:\\Users\\juanm\\AndroidStudioProjects\\PadelAPP\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
 base.2=C\:\\Users\\juanm\\AndroidStudioProjects\\PadelAPP\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\5\\classes.dex

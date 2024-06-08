@@ -29,6 +29,7 @@
     <string name="next_ball_in">Next ball in…</string>
     <string name="no_ball">No. Balls</string>
     <string name="no_balls">No. Balls</string>
+    <string name="noreceived">Message was not correctly received</string>
     <string name="number_balls">Balls:</string>
     <string name="ok">OK</string>
     <string name="pause">Pause</string>

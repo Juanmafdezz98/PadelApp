@@ -19,7 +19,10 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
@@ -89,9 +92,9 @@ class LoginActivity : AppCompatActivity() {
                     outPutStream.write("HELLO SERVER")
                     outPutStream.flush()
 
-                    launch(Dispatchers.Main) {
+                    /*launch(Dispatchers.Main) {
                         tvConnect.setText(R.string.received)
-                    }
+                    }*/
                 }
             } else noConnected()
         }
@@ -129,6 +132,11 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+                runBlocking {
+                    launch {
+                        readMessages(socket)
+                    }
+                }
             } else {
                 context.runOnUiThread {
                     Toast.makeText(
@@ -156,6 +164,26 @@ class LoginActivity : AppCompatActivity() {
             }
             e.printStackTrace()
         }
+    }
+
+    private suspend fun readMessages(socket: Socket) {
+        withContext(IO) {
+            val reader = BufferedReader(InputStreamReader(socket.getInputStream()))
+
+            while (true) {
+                val message = reader.readLine()
+                if (message == "RECIBIDO") {
+                    launch(Dispatchers.Main) {
+                        tvConnect.setText(R.string.received)
+                    }
+                }else{
+                    launch(Dispatchers.Main) {
+                        tvConnect.setText(R.string.noreceived)
+                    }
+                }
+            }
+        }
+
     }
 
 }

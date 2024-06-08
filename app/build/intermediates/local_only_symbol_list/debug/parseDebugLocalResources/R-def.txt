@@ -107,6 +107,7 @@ string lobs
 string next_ball_in
 string no_ball
 string no_balls
+string noreceived
 string number_balls
 string ok
 string pause
