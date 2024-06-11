@@ -8,6 +8,7 @@ color blue2
 color ic_launcher_background
 color white
 drawable add
+drawable check
 drawable edit_text
 drawable end
 drawable finish
@@ -43,6 +44,7 @@ id btnSmash
 id btnWall
 id btn_connect
 id cardView
+id checked
 id cvBalls
 id cvElev
 id cvFeed

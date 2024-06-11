@@ -73,7 +73,8 @@
             app:drawableStartCompat="@drawable/va_connection"
             android:importantForAutofill="no"
             android:inputType="number"
-            android:digits="0123456789.">
+            android:digits="0123456789"
+            android:maxLength="5" >
         </EditText>
 
         <Button
@@ -108,11 +109,31 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/white"
             android:textSize="30sp"
-            tools:text="HELLO"
+            tools:text="hello"
+            android:textAllCaps="true"
             android:layout_gravity="center"
             android:textAlignment="center">
         </TextView>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Linear"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/checked"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/check"
+            android:importantForAccessibility="no"
+            android:visibility="invisible"/>
     </LinearLayout>
 
     <Button

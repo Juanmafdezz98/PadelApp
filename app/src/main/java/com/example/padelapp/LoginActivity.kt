@@ -2,9 +2,12 @@ package com.example.padelapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.NetworkOnMainThreadException
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +29,9 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
+import android.text.TextWatcher
+import android.text.Editable
+import java.lang.NumberFormatException
 
 class LoginActivity : AppCompatActivity() {
 
@@ -38,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var fabNext: FloatingActionButton
     private lateinit var btSend: Button
     private lateinit var socket: Socket
+    private lateinit var check: ImageView
     private val context = this@LoginActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +59,6 @@ class LoginActivity : AppCompatActivity() {
 
         initComponents()
         initListeners()
-
     }
 
     private fun initComponents() {
@@ -62,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
         tvConnect = findViewById(R.id.tv_connect)
         btSend = findViewById(R.id.btSend)
         fabNext = findViewById(R.id.btnForward)
+        check = findViewById(R.id.checked)
     }
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -73,12 +80,21 @@ class LoginActivity : AppCompatActivity() {
                 CoroutineScope(IO).launch {
                     connect(ip, port)
                 }
-            } catch (e: Exception) {
+            } catch (e: NetworkOnMainThreadException) {
                 Log.i("Socket", "Exception")
                 context.runOnUiThread {
                     Toast.makeText(
                         context,
                         "IP Address no valid. Please, enter a valid IP address and try again.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } catch (e: NumberFormatException){
+                Log.i("Socket", "Exception")
+                context.runOnUiThread {
+                    Toast.makeText(
+                        context,
+                        "Fields are empty. Please enter an IP address and try again.",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -109,12 +125,67 @@ class LoginActivity : AppCompatActivity() {
                 noConnected()
             }
         }
+
+        etPort.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                s?.let {
+                    val filteredText = it.filter { char -> char.isDigit() }
+                    if (filteredText.length != it.length) {
+                        context.runOnUiThread {
+                            Toast.makeText(
+                                context,
+                                "Ports can only contain numbers",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        etPort.setText(filteredText)
+                        etPort.setSelection(filteredText.length)
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        etIP.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                s?.let {
+
+                    val filteredText = it.filter { char -> char.isDigit() || char == '.' } //Just numbers and dots
+
+                    //Max. 3 dots and no spaces allowed
+                    val parts = filteredText.split('.')
+                    val isValid = parts.size <= 4 && parts.all { part -> part.isEmpty() || part.toIntOrNull() in 0..255 }
+
+                    if (!isValid) {
+                        context.runOnUiThread {
+                            Toast.makeText(
+                                context,
+                                "Invalid IP introduced. Follow this format: X.X.X.X where X [0, 255]",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        val validText = it.substring(0, start)
+                        etIP.setText(validText)
+                        etIP.setSelection(validText.length)
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
     }
 
     private fun noConnected() {
         Toast.makeText(
             this,
-            "Connection to the server has not been established. Please connect first",
+            "Connection to the server has not been established. Please connect",
             Toast.LENGTH_SHORT
         ).show()
     }
@@ -158,12 +229,19 @@ class LoginActivity : AppCompatActivity() {
             context.runOnUiThread {
                 Toast.makeText(
                     context,
-                    "Introduce an IP address to connect. Please try again.",
+                    "Server was disconnected and communication lost. Please check",
                     Toast.LENGTH_SHORT
                 ).show()
             }
+            backToConnect()
             e.printStackTrace()
         }
+    }
+    private fun backToConnect() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        finish()
     }
 
     private suspend fun readMessages(socket: Socket) {
@@ -175,6 +253,7 @@ class LoginActivity : AppCompatActivity() {
                 if (message == "RECIBIDO") {
                     launch(Dispatchers.Main) {
                         tvConnect.setText(R.string.received)
+                        check.visibility = View.VISIBLE
                     }
                 }else{
                     launch(Dispatchers.Main) {
@@ -185,5 +264,4 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
 }
