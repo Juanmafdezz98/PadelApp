@@ -3,6 +3,8 @@ package com.example.padelapp
 import android.content.Intent
 import android.os.Bundle
 import android.os.NetworkOnMainThreadException
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -29,9 +31,7 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.InetAddress
 import java.net.Socket
-import android.text.TextWatcher
-import android.text.Editable
-import java.lang.NumberFormatException
+import java.net.SocketException
 
 class LoginActivity : AppCompatActivity() {
 
@@ -225,7 +225,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-        } catch (e: Exception) {
+        } catch (e: SocketException) {
             context.runOnUiThread {
                 Toast.makeText(
                     context,
@@ -235,6 +235,12 @@ class LoginActivity : AppCompatActivity() {
             }
             backToConnect()
             e.printStackTrace()
+        }finally {
+            if (!::socket.isInitialized) {
+                withContext(IO) {
+                    socket.close()
+                }
+            }
         }
     }
     private fun backToConnect() {
